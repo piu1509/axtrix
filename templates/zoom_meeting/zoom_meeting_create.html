@@ -1,0 +1,68 @@
+{% extends 'admindashboard/partials/base.html' %}
+{% block style %}
+{% endblock style %}
+{% load static %}
+{% block content %}
+
+
+<section class="h-100">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+                <div class="card card-registration my-4">
+                    <div class="row g-0">
+
+                        <div class="col-xl-6 d-none d-xl-block mt-5">
+                            <img src="{% static 'Images/meetpic.jpg' %}" alt="Sample photo" class="img-fluid rounded" style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+                        </div>
+
+                        <div class="col-xl-6">
+                            <div class="card-body p-md-5 text-black">
+
+                                <h3 class="mb-5 fw-bold text-uppercase">Zoom Meeting <br> Creation Form</h3>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline mb-4">
+                                            <form action="{% url 'admindashboard:zoom_link_create' %}" method="POST" enctype="multipart/form-data">
+                                                {% csrf_token %}
+
+                                                <label for="meeting_title">Meeting Title:</label>
+                                                <input type="text" id="meeting_title" name="meeting_title" class="form-control"><br><br>
+
+                                                <label for="meeting_description">Meeting Description:</label>
+                                                <textarea id="meeting_description" name="meeting_description" rows="4" cols="50" class="form-control"></textarea><br><br>
+
+                                                <label for="meeting_date">Meeting Date:</label>
+                                                <input type="text" id="meeting_date" name="meeting_date" class="form-control"><br><br>
+
+                                                <label for="meeting_time">Meeting Time:</label>
+                                                <input type="text" id="meeting_time" name="meeting_time" class="form-control"><br><br>
+
+                                                <label for="meeting_duration">Meeting Duration:</label><br>
+                                                <input type="text" id="meeting_duration" name="meeting_duration" class="form-control"><br><br>
+
+                                                <label for="email">Email:</label>
+                                                <input type="text" id="email" name="email" class="form-control"><br><br>
+
+                                                <label for="status">Status:</label>
+                                                <input type="text" id="status" name="status" class="form-control"><br><br>
+
+                                                <label for="job">Job:</label>
+                                                <input type="text" id="job" name="job" class="form-control"><br><br>
+
+                                                <input class="btn btn-outline-dark" type="submit" value="Submit" style="width: 100%; max-width: 150px;">
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

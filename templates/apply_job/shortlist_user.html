@@ -1,0 +1,20 @@
+{% extends 'admindashboard/partials/base.html' %}
+{% block style %}
+{% endblock style %}
+{% block content %}
+
+<form method="post" action="{% url 'admindashboard:shortlist_user' slug=slug_param %}">
+    {% csrf_token %}
+    <h2>Shortlist User</h2>
+    {% if shortlist_user %}
+      <p>User is shortlisted.</p>
+      <button type="submit" name="remove_shortlist">Remove from Shortlist</button>
+    {% else %}
+      <p>User is not shortlisted.</p>
+      <button type="submit" name="add_shortlist">Add to Shortlist</button>
+    {% endif %}
+</form>
+
+{% endblock content %}
+{% block script %}
+{% endblock script %}

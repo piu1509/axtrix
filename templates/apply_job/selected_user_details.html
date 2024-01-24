@@ -1,0 +1,18 @@
+{% extends 'admindashboard/partials/base.html' %}
+{% block title %}
+	Selected user details
+{% endblock title %}
+{% block content %}
+<div class="container my-5">
+	<h4 class="text-center fw-bold mb-5">Selected user details</h4>
+	<div class="row d-flex justify-content-center">
+		<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 border shadow p-5">
+			<h5 class="fw-bold text-danger">User: {{user.User}}</h5>
+			<h6 class="mt-4 fw-bold">Profile: {{user.UserProfile}}</h6>
+			<div class="text-center mt-5">
+			<a href="{% url 'admindashboard:selected_user_list' slug=user.Job %}" class="btn btn-light border fw-bold">Back</a>
+		</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

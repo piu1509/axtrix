@@ -1,0 +1,25 @@
+*~
+*.db
+*.env
+*.log
+*.pyc
+*.rdb
+.DS_Store
+__pycache__
+
+#DB
+db.sqlite3
+
+#Folder Dir
+media/
+
+#Node
+node_modules/
+
+#Docs
+Docs/_build/*
+Docs/_static/*
+Docs/_templates/*
+
+#Enviranment Lib
+ENV/

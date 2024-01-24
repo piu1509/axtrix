@@ -1,0 +1,89 @@
+{% extends 'partials/index.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid" style="background-color: #141414;">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <h1 class="text-center fw-bold text-white my-5" style="font-family: 'Times New Roman', serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">About Us</h1>
+      <hr style="border-top: 1px solid #fff;">
+      <div class="row align-items-center my-4">
+        <div class="col-md-4 mb-3 mb-md-0">
+          <img src="{% static 'Images/story.jpg' %}" class="img-fluid rounded shadow" alt="Responsive image" style="width: 100%;">
+        </div>
+        <div class="col-md-8">
+          <div class="card shadow-lg p-3">
+            <div class="card-header fw-bold text-white" style="background-color: #007bff;">
+              Our Story
+            </div>
+            <div class="card-body fs-5" style="font-family: 'Montserrat', serif;">
+              <p>As a tech company, we strive to revolutionize industries through innovative solutions. Our journey began with a vision to create groundbreaking products that enhance efficiency, improve user experiences, and drive growth.</p>
+              <p>With a team of highly skilled professionals, we have successfully undertaken numerous projects across various domains. Our expertise spans web and mobile development, artificial intelligence, data analytics, and more. We are committed to staying at the forefront of technological advancements and continuously refining our skills to meet the evolving needs of our clients.</p>
+              <p>At our core, we value collaboration, integrity, and excellence.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr style="border-top: 1px solid #fff;">
+
+      <div class="row align-items-center my-4">
+        <div class="col-md-8">
+          <div class="card p-3">
+            <div class="card-header text-white" style="background-color: #007bff;">
+              Our Mission
+            </div>
+            <div class="card-body fs-5" style="font-family: 'Montserrat', serif;">
+              <p>Our mission is to empower businesses with cutting-edge technology solutions that drive growth and success.</p>
+              <p>We are committed to delivering high-quality products and services that align with industry standards and best practices. By leveraging the latest technologies and methodologies, we enable our clients to stay ahead of the competition and achieve sustainable business growth.</p>
+              <p>Additionally, we foster a culture of innovation, continuous learning, and collaboration within our team. We encourage creativity, problem-solving, and knowledge sharing to ensure that we remain at the forefront of the ever-evolving tech landscape.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mt-3 mt-md-0">
+          <img src="{% static 'Images/mission.jpg' %}" class="img-fluid rounded shadow" alt="Responsive image" style="width: 100%;">
+        </div>
+      </div>
+      <hr style="border-top: 1px solid #fff;">
+
+      <div class="row align-items-center my-4">
+        <div class="col-md-4 mb-3 mb-md-0">
+          <img src="{% static 'Images/team.jpg' %}" class="img-fluid rounded shadow" alt="Responsive image" style="width: 100%;">
+        </div>
+        <div class="col-md-8">
+          <div class="card p-3">
+            <div class="card-header text-white" style="background-color: #007bff;">
+              Our Team
+            </div>
+            <div class="card-body fs-5" style="font-family: 'Montserrat', serif;">
+              <p>Meet our amazing team of professionals who are dedicated to providing the best services and solutions to our clients.</p>
+              <ul>
+                <li>John Doe - CEO</li>
+                <li>Jane Smith - CTO</li>
+                <li>Mark Johnson - CFO</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr style="border-top: 1px solid #fff;">
+
+    </div>
+  </div>
+</div>
+
+<style>
+  body {
+    background-color: #f8f9fa;
+  }
+
+  .card {
+    margin-bottom: 30px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-header {
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+</style>
+{% endblock %}

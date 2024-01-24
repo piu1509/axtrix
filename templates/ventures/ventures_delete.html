@@ -1,0 +1,14 @@
+{% extends 'admindashboard/partials/base.html' %}
+{% block style %}
+{% endblock style %}
+{% block content %}
+
+<div class="container d-flex jutify-content-center my-5 p-5">
+    <form method="post">
+        {% csrf_token %}
+        <h2>Are you sure you want to delete "{{ name }}"?</h2> 
+            <input type="submit" value="Confirm">
+    </form>
+</div>
+
+{% endblock content %}

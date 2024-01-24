@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Pages</title>
+</head>
+<body>
+
+	<form method="POST" enctype="multipart/form-data" >
+		{% csrf_token %}
+        <h3>My Twitter Page</h3>
+		<input type="text" name="message" placeholder="Enter your tweet here">
+        <br> <br>
+        <input type="file" name="image">
+        <br> <br>
+        <button type="submit">Submit</button>
+	</form>
+
+</body>
+</html>

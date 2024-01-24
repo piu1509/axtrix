@@ -1,0 +1,53 @@
+{% extends 'admindashboard/partials/base.html' %}
+{% block style %}
+{% endblock style %}
+{% load static %}
+{% block content %}
+
+<section class="h-100">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+                <div class="card card-registration my-4">
+                    <div class="row g-0">
+
+                        <div class="col-xl-6 d-none d-xl-block mt-5">
+                            <img src="{% static 'Images/job.jpg' %}" alt="Sample photo" class="img-fluid rounded" style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+                        </div>
+
+                        <div class="col-xl-6">
+                            <div class="card-body p-md-5 text-black">
+
+                                <h3 class="mb-5 fw-bold text-uppercase">Apply Job Form</h3>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline mb-4">
+                                            <form action="{% url 'admindashboard:apply_job_create' %}" method="POST">
+                                                {% csrf_token %}
+
+                                                <label for="job">Job:</label>
+                                                <input type="text" id="job" name="job"><br><br>
+
+                                                <label for="user">User:</label>
+                                                <input type="text" id="user" name="user"><br><br>
+
+                                                <label for="user_profile">User Profile:</label>
+                                                <input type="text" id="user_profile" name="user_profile"><br><br>
+
+                                                <input class="btn btn-outline-dark" type="submit" value="Submit" style="width: 100%; max-width: 150px;">
+                                              </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

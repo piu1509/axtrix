@@ -1,0 +1,73 @@
+{% extends 'admindashboard/partials/base.html' %}
+{% block style %}
+{% endblock style %}
+{% load static %}
+{% block content %}
+
+<section class="h-100">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+                <div class="card card-registration my-4">
+                    <div class="row g-0">
+
+                        <div class="col-xl-6 d-none d-xl-block mt-5">
+                            <img src="{% static 'Images/job.jpg' %}" alt="Sample photo" class="img-fluid rounded" style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+                        </div>
+
+                        <div class="col-xl-6">
+                            <div class="card-body p-md-5 text-black">
+
+                                <h3 class="mb-5 fw-bold text-uppercase">Job Creation Form</h3>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline mb-4">
+                                            <form action="{% url 'admindashboard:job_create' %}" method="POST">
+                                                {% csrf_token %}
+
+                                                <label for="title">Title:</label>
+                                                <input type="text" id="title" name="title" class="form-control"><br><br>
+
+                                                <label for="organization">Organization:</label>
+                                                <input type="text" id="organization" name="organization" class="form-control"><br><br>
+
+                                                <label for="job_poster">Job Poster:</label>
+                                                <input type="text" id="job_poster" name="job_poster" class="form-control"><br><br>
+
+                                                <label for="description">Description:</label><br>
+                                                <textarea id="description" name="description" rows="4" cols="50" class="form-control"></textarea><br><br>
+
+                                                <label for="experience">Experience:</label>
+                                                <input type="text" id="experience" name="experience" class="form-control"><br><br>
+
+                                                <label for="salary">Salary:</label>
+                                                <input type="text" id="salary" name="salary" class="form-control"><br><br>
+
+                                                <label for="skills_required">Skills Required:</label>
+                                                <input type="text" id="skills_required" name="skills_required" class="form-control"><br><br>
+
+                                                <label for="address">Address:</label>
+                                                <input type="text" id="address" name="address" class="form-control"><br><br>
+
+                                                <label for="vacancies">Vacancies:</label>
+                                                <input type="number" id="vacancies" name="vacancies" class="form-control"><br><br>
+
+                                                <label for="qualifications">Qualifications:</label>
+                                                <input type="text" id="qualifications" name="qualifications" class="form-control"><br><br>
+
+                                                <input class="btn btn-outline-dark" type="submit" value="Submit" style="width: 100%; max-width: 150px;">
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

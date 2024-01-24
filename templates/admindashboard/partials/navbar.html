@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg bg-light fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Ax-Work</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse ms-5" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-5 me-auto mb-2 mb-lg-0">
+          
+        </ul>
+        {% if user.is_authenticated %}
+          <img src="" class="rounded-pill">
+          <a href="" class="btn btn-light">{{user.username}}</a>
+          <a href="{% url 'account:logout' %}" class="btn btn-danger">Logout</a>
+        {% else %}
+          <a href="{% url 'account:login' %}" class="btn btn-primary me-2">Login</a>
+          <a href="{% url 'account:signup' %}" class="btn btn-success">Sign Up</a>
+        {% endif %}
+      </div>
+    </div>
+  </nav>

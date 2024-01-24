@@ -1,0 +1,64 @@
+{% extends 'admindashboard/partials/base.html' %}
+{% block style %}
+{% endblock style %}
+{% block content %}
+
+
+<div  id="grad">
+    <div class="container-fluid d-flex justify-content-center">
+        <div class="card bg-blur my-4 " style="max-width:65%;">
+            <div class="card-header bg-dark text-white text-center fs-4 fw-bold">Applied Job Details</div>
+            <div class="card-body fs-5">
+                <hr>
+                <table class="table ">
+                    <thead>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">Job</th>
+                        <td>{{ apply_job_detail.job }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">User</th>
+                        <td>{{ apply_job_detail.user  }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">User Profile</th>
+                        <td>{{ apply_job_detail.user_profile  }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Shortlisted</th>
+                        <td colspan="2">{{ apply_job_detail.shortlisted }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Interview Status</th>
+                        <td colspan="2">{{ apply_job_detail.interview_status }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Result</th>
+                        <td colspan="2">{{ apply_job_detail.result }}</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+
+            <div class="card-footer mb-3 ">
+                {% if request.user == object.blogger or request.user.is_staff %}
+                <div class='d-flex justify-content-between'>
+                    <a class="btn btn-primary mt-2 mb-2 text-decoration-none" href="">Update</a>
+                    <a class=" btn btn-warning ms-2 mt-2 mb-2 text-decoration-none" href="">Delete</a>
+
+                </div>
+
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
+{% block script %}
+{% endblock script %}

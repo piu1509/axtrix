@@ -1,0 +1,168 @@
+{% extends 'partials/index.html' %}
+{% load static %}
+{% block style %}
+{% endblock style %}
+{% block content %}
+<div class="row d-flex">
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img src="{% static 'partials/images/office-3.avif' %}" class="d-block image-carousel" alt="">
+      <div class="carousel-caption d-none d-md-block">
+        <h3 class="fw-bold text-white">WELCOME TO AXWORK</h3>
+        <p class="text-white">Some representative placeholder content for the second slide.</p>
+        <a href="" class="btn btn-light fw-bold my-2">Learn More</a>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="{% static 'partials/images/office.avif' %}" class="d-block image-carousel" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h3 class="fw-bold text-white">WE HELP YOUR BUSINESS</h3>
+        <p class="text-white">Some representative placeholder content for the second slide.</p>
+        <a href="" class="btn btn-light fw-bold my-2">Learn More</a>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'partials/images/office-2.avif' %}" class="d-block image-carousel" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h3 class="fw-bold text-white">WE HELP YOUR BUSINESS</h3>
+        <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam nam, tempora, consequuntur illum repellendus eos.</p>
+        <a href="" class="btn btn-light fw-bold my-2">Learn More</a>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
+<div class="container">
+<div class="row d-flex mt-5 p-5"> 
+<h3 class="text-center fw-bold mb-4">OUR SERVICES</h3> 
+  <div class="col text-center border border-light shadow p-5">
+      <i class="fa fa-2x fa-desktop"></i>  
+      <h5 class="mt-4">LOGO DESIGNING</h5> 
+      <p>Lorem, ipsum dolor sit amet. Lorem, ipsum dolor sit amet.</p>
+      <a href="">Read..</a> 
+  </div>
+  <div class="col text-center border border-light shadow p-5">    
+      <i class="fa fa-2x fa-gear"></i> 
+      <h5 class="mt-4">LOGO DESIGNING</h5> 
+      <p>Lorem, ipsum dolor sit amet. Lorem ipsum, dolor sit amet.</p>
+      <a href="">Read..</a>    
+  </div>
+  <div class="col text-center border border-light shadow p-5">    
+      <i class="fa fa-2x  fa-users"></i>
+      <h5 class="mt-4">LOGO DESIGNING</h5> 
+      <p>Lorem, ipsum dolor sit amet. Lorem ipsum dolor, sit amet.</p>
+      <a href="">Read..</a>     
+  </div>
+</div>
+</div>
+<div class="row d-flex p-5 wrapper">
+  <h3 class="text-center fw-bold mb-4">HOW WE WORK</h3> 
+  <div class="col col-sm-8 col-xs-8 col-md-8 col-lg-8 shadow p-5 bg-light">
+    <h5 class="fw-bold">Lorem ipsum dolor sit amet.</h5>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Ducimus obcaecati et sapiente delectus amet excepturi. Accusantium corporis, molestiae vitae repellat.</p>
+    <a href="" class="link-dark text-decoration-none">Read more..</a>
+  </div>
+  <div class="col col-sm-4 col-xs-4 col-md-4 col-lg-4">
+    <img src="{% static 'partials/images/axwork-1.avif' %}" class="w-100">
+  </div>
+</div>
+<div class="container">
+<div class="row d-flex mt-5 p-5">
+<h3 class="text-center fw-bold mb-4">OUR SUCCESS</h3> 
+  <div class="col">
+    <div class="card p-5 border-0 shadow">
+      <img src="{% static 'partials/images/axwork-2.avif' %}" class="card-image w-100">
+      <div class="card-body text-center">
+        <h5 class="card-title fw-bold mt-2">WEBSITE</h5>
+        <p class="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi atque, quo, a placeat minus non alias officiis aperiam itaque dolorum.</p>
+        <a href="" class="btn rounded-pill btn-secondary btn-sm mt-2">Read More</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+        <div class="card p-5 border-0 shadow align-items-center">
+      <img src="{% static 'partials/images/axwork-3.avif' %}" class="card-image w-75">
+      <div class="card-body text-center">
+        <h5 class="card-title fw-bold mt-2">WEBSITE</h5>
+        <p class="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi atque, quo, a placeat minus non alias officiis aperiam itaque dolorum.</p>
+        <a href="" class="btn rounded-pill btn-secondary btn-sm mt-2">Read More</a>
+    </div>
+    </div>
+  </div>
+  <div class="col">
+        <div class="card p-5 border-0 shadow">
+      <img src="{% static 'partials/images/axwork-2.avif' %}" class="card-image w-100">
+      <div class="card-body text-center">
+        <h5 class="card-title fw-bold mt-2">WEBSITE</h5>
+        <p class="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi atque, quo, a placeat minus non alias officiis aperiam itaque dolorum.</p>
+        <a href="" class="btn rounded-pill btn-secondary btn-sm mt-2">Read More</a>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="row d-flex my-5 justify-content-center carousel-row p-3">
+  <div class="col col-sm-6">
+    <h3 class="fw-bold text-center">WHAT OUR CLIENT SAYS ?</h3>
+   <div id="carouselExampleControls" class="carousel slide mt-4" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="row d-flex">
+        <div class="col col-sm-4 col-xs-4 col-md-4 col-lg-4">
+          <img src="{% static 'partials/images/profile-1.avif' %}" class="d-block w-100 h-75 rounded-pill">
+        </div>
+        <div class="col col-sm-8 col-xs-8 col-md-8 col-lg-8 p-4">
+          <h5 class="fw-bold">Abraham L.</h5>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A aliquid quod sed fuga, omnis libero eos vero nesciunt, harum doloribus deserunt perferendis suscipit tempore, aspernatur.</p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="row d-flex">
+        <div class="col col-sm-4 col-xs-4 col-md-4 col-lg-4">
+          <img src="{% static 'partials/images/profile-2.avif' %}" class="d-block w-100 h-75 rounded-pill">
+        </div>
+        <div class="col col-sm-8 col-xs-8 col-md-8 col-lg-8 p-4">
+          <h5 class="fw-bold">Augustus J.</h5>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A aliquid quod sed fuga, omnis libero eos vero nesciunt, harum doloribus deserunt perferendis suscipit tempore, aspernatur.</p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="row d-flex">
+        <div class="col col-sm-4 col-xs-4 col-md-4 col-lg-4">
+          <img src="{% static 'partials/images/profile-3.avif' %}" class="d-block w-100 h-75 rounded-pill">
+        </div>
+        <div class="col col-sm-8 col-xs-8 col-md-8 col-lg-8 p-4">
+          <h5 class="fw-bold">Emily A.</h5>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A aliquid quod sed fuga, omnis libero eos vero nesciunt, harum doloribus deserunt perferendis suscipit tempore, aspernatur.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
+</div>
+{% endblock %}

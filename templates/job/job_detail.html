@@ -1,0 +1,38 @@
+{% extends 'admindashboard/partials/base.html' %}
+{% block title %}
+	Job details
+{% endblock title %}
+{% load static %}
+{% block style %}
+	<link rel="stylesheet" type="text/css" href="{% static 'job/job-detail.css' %}">
+{% endblock style %}
+{% block content %}
+	<div class="container my-5">
+		<h2 class="fw-bold text-center mb-5">Job details</h2>
+		<div class="row d-flex justify-content-center">
+			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 border shadow p-5">
+				<h3 class="fw-bold mb-4">{{job.title}}</h3>
+				<hr>
+				<h6 class="fw-bold"><i class="fa fa-building-o"></i> {{job.organization}}</h6>
+				<h6 class="small"><i class="fa fa-map-marker"></i> {{job.address}}</h6>
+				<p class="small"><i class="fa fa-calendar"></i> Posted on: {{job.created_at}}</p>
+				<h6 class="small"><i class="fa fa-user"></i> {{job.job_poster}} is hiring for this job.</h6>
+				<hr>
+				<h6 class="mt-5"><i class="fa fa-info"></i><span class="fw-bold"> Job description:</span> {{job.description}}</h6>
+				<p><i class="fa fa-tasks"></i><span class="fw-bold"> Required skills:</span> {{job.skills_required}}</p>
+				<p><i class="fa fa-history"></i><span class="fw-bold"> Minimum experience:</span> {{job.experience}} years</p>
+				<h5 class="fw-bold"><i class="fa fa-money"></i> &#8377;{{job.salary}} a month</h5>
+				<p><i class="fa fa-graduation-cap"></i><span class="fw-bold"> Preffered qualification:</span> {{job.qualifications}}</p>
+				<p><i class="fa fa-users"></i> Hiring for {{job.vacancies}} candidates.</p>
+				<div class="row d-flex mt-5">
+					<div class="col">
+						<a href="{% url 'admindashboard:job_update' slug=job.slug %}" class="btn btn-success fw-bold">Update</a>
+					</div>
+					<div class="col">
+						<a href="{% url 'admindashboard:job_delete' slug=job.slug %}" class="btn btn-danger fw-bold float-end">Delete</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

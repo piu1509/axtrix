@@ -1,0 +1,18 @@
+.image-carousel{
+	height:30rem;
+	width: 100%;
+}
+.fa-2x{
+	border: 1px solid black;
+	border-radius: 50%;
+	padding: 20px;
+}
+.wrapper{
+	background-color: #F0F8FF;
+}
+.carousel-row{
+	background-color: #E6E6FA;
+}
+.btn-sm{
+	width:7rem;
+}

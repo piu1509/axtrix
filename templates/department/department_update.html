@@ -1,0 +1,89 @@
+{% extends 'admindashboard/partials/base.html' %}
+{% block title %}
+Department update
+{% endblock title %}
+{% load static %}
+{% block content %}
+	<div class="container my-5">
+		<div class="row d-flex justify-content-center align-items-center">
+			<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+				<div class="border border-light shadow p-5">
+					<h5 class="fw-bold text-center mb-5">Department Update Form</h5>
+					<form method="POST">
+						{% csrf_token %}
+						<label for="organization">Organization</label>
+						<br>
+						<input type="text" id="organization" name="organization" value="{{department.organization}}">
+						<br>					
+						<p class="mt-3">Choose the department name:</p>
+						{% if department.department_name == "hr" %}
+						<input type="radio" name="department_name" id="hr" value="hr" checked="true">
+						<label for="hr">Hr</label>
+						{% else %}
+						<input type="radio" name="department_name" id="hr" value="hr">
+						<label for="hr">Hr</label>
+						{% endif %}
+						<br>
+						{% if department.department_name == "backoffice" %}
+						<input type="radio" name="department_name" id="backoffice" value="backoffice" checked="true">
+						<label for="backoffice">Backoffice</label>
+						{% else %}
+						<input type="radio" name="department_name" id="backoffice" value="backoffice">
+						<label for="backoffice">Backoffice</label>
+						{% endif %}
+						<br>
+						{% if department.department_name == "developer" %}
+						<input type="radio" name="department_name" id="developer" value="developer" checked="true">
+						<label for="developer">Developer</label>
+						{% else %}
+						<input type="radio" name="department_name" id="developer" value="developer">
+						<label for="developer">Developer</label>
+						{% endif %}
+						<br>
+						{% if department.department_name == "designer" %}
+						<input type="radio" name="department_name" id="designer" value="designer" checked="true">
+						<label for="designer">Designer</label>
+						{% else %}
+						<input type="radio" name="department_name" id="designer" value="designer">
+						<label for="designer">Designer</label>
+						{% endif %}
+						<br>
+						{% if department.department_name == "business_development"%}
+						<input type="radio" name="department_name" id="business_development" value="business_development" checked="true">
+						<label for="business_development">
+						Business_development</label>
+						{% else %}
+						<input type="radio" name="department_name" id="business_development" value="business_development">
+						<label for="business_development">
+						Business_development</label>
+						{% endif %}
+						<br>
+						{% if department.department_name == "admin" %}
+						<input type="radio" name="department_name" id="admin" value="admin" checked="true">
+						<label for="admin">Admin</label>
+						{% else %}
+						<input type="radio" name="department_name" id="admin" value="admin">
+						<label for="admin">Admin</label>
+						{% endif %}
+						<br>
+						<br>
+						<label for="employee">Employee</label>
+						<br>
+						<input type="text" id="employee" name="employee" value="{{department.employee}}">
+						<div class="row d-flex mt-5">
+							<div class="col">
+								<input type="submit" name="submit" value="Submit" class="fw-bold">
+							</div>
+							<div class="col">
+								<a href="{% url 'admindashboard:department_detail' slug=department.slug %}" class="btn btn-light btn-sm float-end border border-dark fw-bold">Back</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 bg-light p-5">
+				<img src="{% static 'partials/images/axwork-2.avif' %}" class="w-100">
+			</div>
+		</div>
+	</div>
+{% endblock %}

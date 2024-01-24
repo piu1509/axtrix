@@ -1,0 +1,60 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/joining.css' %}">
+    
+    <title>Offer letter</title>
+  </head>
+  <body>
+  <br />
+  <div class="container address-content">
+    <h2 class="text-center"><u>Offer Letter</u></h2>
+    <div class="office-content" style="margin-top:5%">
+      <p class="office-p" >
+        <input type="text" placeholder="Company name" class="form-data" name="pre_company" /><br />
+        <input type="text" placeholder="Location" class="form-data" name="location" /> <br />
+      </p>
+    </div>
+  </div>
+  <div class="container form-content">
+    <h4 class="text-center"><u>Sub:- Offer Letter</u></h4>
+    <form method="post" action="{% url 'zoom_meeting:convert_pdf' %}">
+      {% csrf_token %}
+      <p class="form-p">
+        Dear <input type="text" placeholder="Candidate's name" class="form-data" name="candidate_name" />, <br />
+        We are pleased to offer you a position of <input type="text" placeholder="Position" class="form-data" name="position" /> at our Company <input type="text" placeholder="Company name" class="form-data" name="pre_company" />  at <b><input type="text" class="form-data" placeholder="Location" name="location" /></b>.<br>
+                You are requested to report on duty on or before <b><input type="text" class="form-data" placeholder="Joining Date" name="date" /></b>.<br><br>
+                We are sure that your association with our organization will be mutually beneficial and look forward to a fruitful relationship.<br><br>
+                <br>
+                If you have any questions or concerns, please do not hesitate to contact us.
+                We are excited about the prospect of having you join our team and are looking forward to welcoming you aboard.
+         <br />
+        <br />   
+        Sincerely, 
+        <br />
+        <br />
+        <input type="text" placeholder="Employee's Name" class="sign" name="emp_name" />
+        <p>Hiring Department</p>
+      </p>
+      <br />
+      Email: <input type="text" class="form-data" name="mail_id" />
+      <br/>
+        Date: <input type="text" class="form-data" name="today_date" />
+        <br/> <br/>
+        <input type="hidden" name="slug" value="{{ slug }}">
+        <button class="btn btn-success" type="submit" name="convert" value="view1" target="_blank"  formtarget="_blank">Convert to PDF</button>
+        <button class="btn btn-success" type="submit" name="send_offer_letter" value="view2">Send Offer Letter</button>
+    </form>
+
+  </div>
+  <br /><br />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>

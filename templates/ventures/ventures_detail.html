@@ -1,0 +1,76 @@
+{% extends 'admindashboard/partials/base.html' %}
+{% block style %}
+{% endblock style %}
+{% block content %}
+
+<div  id="grad">
+    <div class="container-fluid d-flex justify-content-center">
+        <div class="card bg-blur my-4 " style="max-width:65%;">
+            <div class="card-header bg-dark text-white text-center fs-4 fw-bold">Venture Details</div>
+            <div class="card-body fs-5">
+                <hr>
+                <table class="table ">
+                    <thead>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">Title</th>
+                        <td>{{ ventures_detail.name }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Content</th>
+                        <td>{{ ventures_detail.address|linebreaks  }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Image</th>
+                        <td colspan="2"><img src="{{ ventures_detail.image }}" class="rounded shadow-lg p-3 mb-5 bg-white rounded" style="max-width:60%;max-height:40%;"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Website</th>
+                        <td colspan="2">{{ ventures_detail.website }}</td>
+                    </tr>
+                    
+                    <tr>
+                        <th scope="row">Founder</th>
+                        <td colspan="2">{{ ventures_detail.founder }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Founded on</th>
+                        <td colspan="2">{{ ventures_detail.founded_on }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Address</th>
+                        <td colspan="2">{{ ventures_detail.address }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Contact no</th>
+                        <td colspan="2">{{ ventures_detail.contact_no }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Organisation type</th>
+                        <td colspan="2">{{ ventures_detail.organisation_type }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Area served</th>
+                        <td colspan="2">{{ ventures_detail.area_served }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Description</th>
+                        <td colspan="2">{{ ventures_detail.description }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer mb-3 ">
+                <div class='d-flex justify-content-between'>
+                    <a class="btn btn-primary mt-2 mb-2 text-decoration-none" href="{% url 'admindashboard:ventures_update' slug=ventures_detail.slug %}">Update</a>
+                    <a class=" btn btn-warning ms-2 mt-2 mb-2 text-decoration-none" href="{% url 'admindashboard:ventures_delete' slug=ventures_detail.slug %}">Delete</a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

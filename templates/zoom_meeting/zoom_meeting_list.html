@@ -1,0 +1,39 @@
+{% extends 'admindashboard/partials/base.html' %}
+{% block style %}
+{% endblock style %}
+{% block content %}
+
+<section>
+    <div class="container-fluid">
+
+        <div class="row mb-2">
+            <h2 class="text-center fw-bold" style="font-family: 'Times New Roman', serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">List Of Zoom Meetings</h2>
+
+        </div>
+
+        <div class="row">
+
+            {% for obj in zoom_meeting_list %}
+
+            <div class="col-lg-3 col-md-4 col-sm-6 my-2">
+                <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+                    <div class="card-header bg-dark text-white fs-3 fw-bold">{{ obj.meeting_title }}</div>
+                    <div class='card-body'>
+                        <h5 class="card-title" style="font-size: 18px; font-weight: 600;"><span class='fs-3'>Date : </span> <br> {{ obj.meeting_date }}</h5>
+                        <br>
+                        <h5 class="card-title" style="font-size: 18px; font-weight: 600;"><span class='fs-3'>Time : <br> </span>{{ obj.meeting_time }}</h5>
+                    </div>
+                    <div class="card-footer">
+                        {% comment %} <a href="{% url 'admindashboard:ventures_detail' slug=obj.slug %}" class="btn btn-primary">More Details</a> {% endcomment %}
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
+{% block script %}
+{% endblock script %}

@@ -1,0 +1,34 @@
+{% extends 'admindashboard/partials/base.html' %}
+{% block title %}
+	Interview Pending User List
+{% endblock title %}
+{% load static %}
+{% block content %}
+	<div class="container my-5">
+		<h4 class="text-center fw-bold mb-5">Users whose interview is still pending.</h4>
+		{% for user in pending_users %}
+			<div class="row d-flex justify-content-center align-items-center mb-5">				
+				<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 text-center border shadow p-4">
+					<div class="row d-flex justify-content-center bg-secondary">
+						<h5 class="fw-bold text-white p-1">User: user-{{forloop.counter}}</h5>
+					</div>	
+					<div class="row d-flex justify-content-center my-4">
+						<h6 class="fw-bold">Profile: {{user.user_profile}}</h6>
+					</div>
+					<div class="text-center">
+						<a href="{% url 'admindashboard:update_interview_status' slug=user.slug %}" class="btn btn-sm btn-success fw-bold">Update status</a>
+					</div>	
+				</div>
+			</div>
+		{% endfor %}
+		<center>
+		{% if pending_users.has_previous %}
+			<a href="?page={{pending_users.previous_page_number}}" class="btn"> &laquo; PREV</a>
+		{% endif %}
+		<span>{{pending_users.number}}</span>
+		{% if pending_users.has_next %}
+		<a href="?page={{pending_users.next_page_number}}" class="btn"> NEXT &raquo;</a>
+	{% endif %}
+	</center>
+	</div>
+{% endblock %}

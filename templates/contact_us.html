@@ -1,0 +1,126 @@
+{% extends 'partials/index.html' %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class='container'>
+        <div class="row">
+            <div class="col-md-7">
+                <h3 class='fw-bold' style="font-family: 'Montserrat', serif;">Get in touch</h3>
+                <hr>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label fw-bold" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Name</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter your name">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label fw-bold" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Email</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter your email">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label fw-bold" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Contact Number</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter your number">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label fw-bold" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Message</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <button class="btn btn-primary">Submit</button>
+            </div>
+            <div class="col-md-5">
+                <h3 class='fw-bold' style="font-family: 'Montserrat', serif;">Contact Us</h3>
+                <hr>
+                <div class="mt-4">
+                    <div class="d-flex">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        <p>Address: 198 West 21th Street, Suite 721 New York NY 10016</p>
+                    </div>
+                    <hr>
+                    <div class="d-flex">
+                        <i class="bi bi-telephone-fill"></i>
+                        <p>Contact: 8888888888</p>
+                    </div>
+                    <hr>
+                    <div class="d-flex">
+                        <i class="bi bi-envelope-fill"></i>
+                        <p>Email: contact@gmail.com</p>
+                    </div>
+                    <hr>
+                    <div class="d-flex">
+                        <i class="bi bi-globe"></i>
+                        <p>Website: www.contact.com</p>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.container {
+    width: 60%;
+    padding: 45px;
+    border-radius: 0;
+    margin: 0 auto; /* Center the container horizontally */
+    margin-top: 50px; /* Adjust the top margin as needed */
+}
+
+.row {
+    box-shadow: rgba(50, 50, 93, 0.4) 0px 8px 16px -4px, rgba(0, 0, 0, 0.5) 0px 4px 8px -2px;
+    margin-top: 20px; /* Add spacing between rows */
+}
+
+.col-md-7 {
+    padding: 20px;
+}
+
+.col-md-5 {
+    background: #1089ff;
+    padding: 20px;
+    color: white;
+}
+
+.form-control {
+    height: 52px;
+    background: #fff;
+    color: #000;
+    font-size: 14px;
+    border-radius: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.bi {
+    font-size: 20px;
+}
+
+.d-flex p {
+    font-size: 18px;
+    padding-left: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 20px;
+        margin-top: 30px;
+    }
+    
+    .row {
+        margin-top: 10px;
+    }
+    
+    .col-md-7 {
+        padding: 10px;
+    }
+    
+    .col-md-5 {
+        padding: 10px;
+    }
+    
+    .d-flex p {
+        font-size: 16px;
+    }
+}
+</style>
+
+{% endblock %}

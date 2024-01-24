@@ -1,0 +1,37 @@
+{% extends 'admindashboard/partials/base.html' %}
+{% block title %}
+	Department list
+{% endblock title %}
+{% block content %}
+	<div class="container">
+		<div class="row d-flex my-5">
+			<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+				<h4 class="float-end fw-bold">Department list</h4>
+			</div>
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+				<a href="{% url 'admindashboard:department_create' %}" class="btn btn-warning fw-bold float-end">Create New</a>
+			</div>
+		</div>
+		{% for data in data_list %}
+			<div class="row d-flex justify-content-center my-5 bg-light p-3">
+				<div class="col col-xs-7 col-sm-7 col-md-7 col-lg-7">
+					<div class="border p-5 border-light shadow text-center">
+						<h5 class="fw-bold">Organization: {{data.organization}}</h5>
+						<h6 class="fw-bold">Department name: {{data.department_name}}</h6>
+						<h6 class="fw-bold">Employee: {{data.employee}}</h6>
+						<a href="{% url 'admindashboard:department_detail' slug=data.slug %}" class="btn btn-primary mt-3 fw-bold">Details</a>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+		<center>
+		{% if data_list.has_previous %}
+			<a href="?page={{data_list.previous_page_number}}" class="btn"> &laquo; PREV</a>
+		{% endif %}
+		<span>{{data_list.number}}</span>
+		{%if data_list.has_next %}
+		<a href="?page={{data_list.next_page_number}}" class="btn"> NEXT &raquo;</a>
+	{% endif %}
+	</center>
+</div>
+{% endblock %}
